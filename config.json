@@ -1,0 +1,199 @@
+{
+  "externalUrl": "",
+  "title": "Rex Home",
+  "message": {
+    "url": "https://sv443.net/jokeapi/v2/joke/Programming?type=single",
+    "attribute": "joke"
+  },
+  "header": {
+    "avatar": "https://s.gravatar.com/avatar/00a0868f16995a2f5f659e5ffbda7811?s=80",
+    "text": "Rex Dashboard",
+    "links": [
+      {
+        "icon": "fas fa-home",
+        "label": "Home",
+        "url": "https://www.reez.dev",
+        "target": "_blank"
+      }
+    ]
+  },
+  "monitoring": {
+    "enabled": false,
+    "label": "Server Status",
+    "status": [
+      {
+        "heading": "CPU",
+        "hint": "srv.rlab.app",
+        "endpoint": ""
+      }
+    ]
+  },
+  "services": {
+    "label": "Toolkit",
+    "enabled": true,
+    "entries": [
+      {
+        "name": "Bitwarden",
+        "description": "Personal password manager",
+        "icon": {
+          "class": "fas fa-shield-alt"
+        },
+        "url": "https://warden.rlab.app",
+        "target": "_blank",
+        "tag": "#Vault",
+        "tagBgColor": "#3c8dbc"
+      },
+      {
+        "name": "Mailu",
+        "description": "Fully-featured mail server",
+        "icon": {
+          "url": "https://mail.rlab.app/skins/elastic/images/logo.svg?s=1582145757"
+        },
+        "url": "https://mail.rlab.app",
+        "target": "_blank",
+        "tag": "#Mail",
+        "tagBgColor": "#222d32"
+      },
+      {
+        "name": "Accent",
+        "description": "Developer-Oriented translation tool",
+        "icon": {
+          "url": "data:image/svg+xml,%3Csvg class='_applicationLogo-image_b7jdki' viewBox='0 0 480 480' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='1.414'%3E%3Ccircle cx='240' cy='240' r='239.334' fill='%233dbc87'%3E%3C/circle%3E%3Cpath d='M101.024 300.037l16.512 14.677s100.856-96.196 117.42-96.445c16.562-.25 126.59 92.77 126.59 92.77l17.43-15.6-116.5-142.19c-8.257-11.01-18.348-16.51-27.52-16.51-11.927 0-23.852 8.25-34.86 24.77l-99.072 138.52z' fill='%230f2f21' fill-rule='nonzero'%3E%3C/path%3E%3C/svg%3E"
+        },
+        "url": "https://translate.rlab.app",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#28cb87"
+      },
+      {
+        "name": "Cloud Torrent",
+        "description": "Remote torrent client",
+        "icon": {
+          "url": "https://api.cloudron.io/api/v1/apps/com.github.cloudtorrent/versions/2.0.0/icon"
+        },
+        "url": "https://torrent.rlab.app",
+        "target": "_blank",
+        "tag": "#Torrent",
+        "tagBgColor": "#db2828"
+      },
+      {
+        "name": "Book Stack",
+        "description": "Platform for organizing and storing information",
+        "icon": {
+          "url": "https://notes.rlab.app/logo.png"
+        },
+        "url": "https://notes.rlab.app",
+        "target": "_blank",
+        "tag": "#Notes",
+        "tagBgColor": "#000000"
+      },
+      {
+        "name": "Redash",
+        "description": "Connect to any data source",
+        "icon": {
+          "url": "https://redash.rlab.app/static/images/favicon-96x96.png"
+        },
+        "url": "https://redash.rlab.app",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#000000"
+      },
+      {
+        "name": "Grafana",
+        "description": "Analytics and Monitoring solution",
+        "icon": {
+          "url": "https://monitoring.rlab.app/public/img/grafana_icon.svg"
+        },
+        "url": "https://monitoring.rlab.app",
+        "target": "_blank",
+        "tag": "#Analytics",
+        "tagBgColor": "#2a6cd1"
+      },
+      {
+        "name": "Ackee",
+        "description": "Analytics tool for those who care about privacy",
+        "icon": {
+          "url": "https://analytics.rlab.app/favicon.ico"
+        },
+        "url": "https://analytics.rlab.app/",
+        "target": "_blank",
+        "tag": "#Analytics",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      },
+      {
+        "name": "Ghost",
+        "description": "The professional publishing platform",
+        "icon": {
+          "url": "https://ghost.org/icons/icon-192x192.png"
+        },
+        "url": "https://blog.rlab.app/",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      },
+      {
+        "name": "Rocket Chat",
+        "description": "Open source team chat software solution",
+        "icon": {
+          "url": "https://chat.rlab.app/assets/favicon.svg"
+        },
+        "url": "https://chat.rlab.app/",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      },
+      {
+        "name": "Weekan",
+        "description": "Open Source kanban",
+        "icon": {
+          "url": "https://wekan.github.io/wekan-150.svg"
+        },
+        "url": "https://kanban.rlab.app/",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      },
+      {
+        "name": "Gitea",
+        "description": "Git with a cup of tea",
+        "icon": {
+          "url": "https://git.rlab.app/img/gitea-sm.png"
+        },
+        "url": "https://git.rlab.app",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      },
+      {
+        "name": "Drone",
+        "description": "Automate Software Testing and Delivery",
+        "icon": {
+          "url": "https://drone.io/images/favicon/apple-icon-114x114-75f9f0ef87.png"
+        },
+        "url": "https://ci.rlab.app",
+        "target": "_blank",
+        "tag": "#CI",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      },
+      {
+        "name": "Cachet",
+        "description": "Beautiful and powerful status page system.",
+        "icon": {
+          "url": "https://status.rlab.app/img/apple-touch-icon-120x120.png"
+        },
+        "url": "https://status.rlab.app",
+        "target": "_blank",
+        "tag": "",
+        "tagBgColor": "#73fac8",
+        "tagColor": "#000000"
+      }
+    ]
+  },
+  "footer": {}
+}

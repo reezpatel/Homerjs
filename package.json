@@ -1,0 +1,17 @@
+{
+  "name": "homer-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.9.2"
+  },
+  "devDependencies": {
+    "sass": "^1.26.5"
+  }
+}

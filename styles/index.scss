@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+$block: 8px;
+
+:root {
+  --bg-color: #202442;
+  --bg-light-color: #2d325a;
+  --text-color: #ffffff;
+  --text-title-color: #ffffffbe;
+  --text-light-color: #ffffff80;
+  --accent-color: #fa1f38;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: $block * 2 $block * 4;
+
+  .profile {
+    display: flex;
+    align-items: center;
+
+    span {
+      width: $block * 6;
+      height: $block * 6;
+      border-radius: 200px;
+      overflow: hidden;
+      margin-right: $block * 2;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p {
+    }
+  }
+
+  .nav-options {
+    display: flex;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      margin: 0 $block * 2;
+
+      li {
+        display: inline-block;
+        font-size: $block * 3;
+        position: relative;
+        margin: 0 $block;
+        cursor: pointer;
+
+        &:hover {
+          span {
+            opacity: 1;
+          }
+        }
+
+        span {
+          opacity: 0;
+          position: absolute;
+          font-size: $block * 1.5;
+          bottom: -$block * 5;
+          transform: translateX(-50%);
+          left: 50%;
+          background-color: var(--bg-light-color);
+          padding: $block;
+          letter-spacing: 1.3px;
+        }
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+
+    input {
+      background-color: var(--bg-light-color);
+      outline: none;
+      border: none;
+      padding: $block $block * 4 $block $block * 2;
+      width: $block * 10;
+
+      &:focus {
+        width: $block * 30;
+      }
+    }
+    span {
+      position: absolute;
+      font-size: $block * 2;
+      right: $block * 2;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+h3 {
+  display: block;
+  width: 100%;
+  margin-bottom: $block * 2;
+}
+
+.monitoring {
+  margin: $block * 2 $block * 4;
+}
+
+.services {
+  width: 85%;
+  margin: auto;
+
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: $block * 2;
+    row-gap: $block * 2;
+
+    .card {
+      background-color: var(--bg-light-color);
+      padding: $block * 3 $block * 3;
+      border-radius: $block;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+          0 6px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      .card-icon {
+        margin-right: $block * 2.5;
+        width: $block * 5;
+        height: $block * 5;
+        font-size: $block * 4;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      section {
+        p {
+          font-weight: 600;
+          margin-bottom: $block * 0.5;
+          color: var(--text-title-color);
+          font-size: $block * 2.5;
+        }
+        span {
+          font-weight: 300;
+          font-size: $block * 1.8;
+          color: var(--text-light-color);
+        }
+      }
+
+      .tag {
+        position: absolute;
+        top: 0;
+        right: $block * 2;
+        background-color: var(--accent-color);
+        padding: $block;
+        font-size: $block * 1.4;
+        font-weight: 500;
+        letter-spacing: 1.1px;
+        transform: translateY(calc(-100% + 5px));
+      }
+
+      &:hover {
+        .tag {
+          border-bottom-left-radius: $block;
+          border-bottom-right-radius: $block;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+.message {
+  width: 80%;
+  margin: $block * 7 auto;
+  border: 2px solid var(--bg-light-color);
+  padding: $block * 2 $block * 4;
+  border-radius: $block;
+  color: var(--text-title-color);
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  font-size: $block * 1.8;
+  line-height: $block * 2.5;
+}
+
+a {
+  text-decoration: none;
+}

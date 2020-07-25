@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homer.JS</title>
+    <link rel="stylesheet" href="./styles/index.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <section
+      x-data="{_data: {
+  externalUrl: '',
+  title: '',
+  message: '',
+  header: {
+    avatar: '',
+    text: '',
+    links: [],
+  },
+  monitoring: {
+    enabled: false,
+  },
+  services: {
+    enabled: false,
+  },
+  footer: {},
+},_loaded: false, _message: ''}"
+      x-init="(async () => {
+  _data = await fetch('http://127.0.0.1:8080/config.json').then((data) =>
+    data.json()
+  )
+  if(_data.title) {
+      document.title = _data.title;
+  }
+  if (_data && _data.message && _data.message.url) {
+    const response = await fetch(_data.message.url).then((data) => data.json())
+    _message = _data.message.attribute
+      ? response[_data.message.attribute]
+      : response
+  } else {
+    _message = _data.message
+  }
+  _loaded = true;
+})()"
+    >
+      <template x-if="_loaded">
+        <header x-show.transition="true">
+          <section class="profile">
+            <span>
+              <img x-bind:src="_data.header.avatar" />
+            </span>
+            <p x-text="_data.header.text"></p>
+          </section>
+          <section class="nav-options">
+            <ul>
+              <template x-for="link in _data.header.links">
+                <li>
+                  <a x-bind:href="link.url" x-bind:target="link.target">
+                    <i x-bind:class="link.icon" class="icon"></i>
+                  </a>
+                  <span x-text="link.label"></span>
+                </li>
+              </template>
+            </ul>
+            <div class="search">
+              <input type="text" placeholder="Search" />
+              <span><i class="fas fa-search"></i></span>
+            </div>
+          </section>
+        </header>
+
+        <section>
+          <template x-if="_message">
+            <p class="message" x-text="_message"></p>
+          </template>
+        </section>
+
+        <template x-if="_data.monitoring.enabled">
+          <section class="monitoring">
+            <h3 x-text="_data.monitoring.label"></h3>
+          </section>
+        </template>
+        <template x-if="_data.services.enabled">
+          <section class="services">
+            <h3 x-text="_data.services.label"></h3>
+            <div class="services-list">
+              <template x-for="entry in _data.services.entries">
+                <a
+                  class="card"
+                  x-bind:href="entry.url"
+                  x-bind:target="entry.target"
+                >
+                  <template x-if="entry.tag">
+                    <span
+                      class="tag"
+                      x-bind:style="`background-color: ${entry.tagBgColor}; color: ${entry.tagColor}`"
+                      x-text="entry.tag"
+                    ></span>
+                  </template>
+                  <template
+                    x-if="entry && entry.icon && (entry.icon.url || entry.icon.class)"
+                  >
+                    <div class="card-icon">
+                      <span
+                        ><template
+                          x-if="entry && entry.icon && typeof entry.icon.class !== 'undefined'"
+                        >
+                          <i
+                            x-bind:class="entry.icon.class"
+                            class="icon"
+                          ></i> </template
+                      ></span>
+                      <span
+                        ><template x-if="entry.icon.url">
+                          <div class="img">
+                            <img x-bind:src="entry.icon.url" />
+                          </div> </template
+                      ></span>
+                    </div>
+                  </template>
+                  <section>
+                    <p x-text="entry.name"></p>
+                    <span x-text="entry.description"></span>
+                  </section>
+                </a>
+              </template>
+            </div>
+          </section>
+        </template>
+      </template>
+    </section>
+
+    <script src="./src/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  </body>
+</html>
